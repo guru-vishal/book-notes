@@ -1,0 +1,32 @@
+<%- include('./partials/header') %>
+
+<div class="container" style="margin: 5rem">
+  <div class="card container card-container">
+    <div class="card-body">
+      <h5 class="card-title croissant-one-regular">Remove a book</h5>
+      <br />
+
+      <form action="/remove" method="post">
+        <!-- Label for ISBN -->
+        <label for="isbn" class="croissant-one-regular"> ISBN </label
+        ><br /><br />
+        <!-- Input for ISBN -->
+        <input
+          type="text"
+          class="form-control croissant-one-regular"
+          placeholder="ISBN"
+          id="isbn"
+          name="isbn"
+          required
+        /><br /><br />
+
+        <!-- Button for deleting -->
+        <button type="submit" class="btn btn-danger croissant-one-regular">
+          Remove</button
+        ><br /><br />
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

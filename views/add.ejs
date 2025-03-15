@@ -1,0 +1,105 @@
+<%- include('./partials/header') %>
+
+<div class="container" style="margin: 5rem">
+  <div class="card container card-container">
+    <div class="card-body">
+      <h5 class="card-title croissant-one-regular">Add a book</h5>
+      <br />
+
+      <form action="/add" method="post">
+        <!-- Label for ISBN -->
+        <label for="isbn" class="croissant-one-regular"> ISBN </label
+        ><br /><br />
+        <!-- Input for ISBN -->
+        <input
+          type="text"
+          class="form-control croissant-one-regular"
+          placeholder="ISBN"
+          id="isbn"
+          name="isbn"
+          required
+        /><br /><br />
+
+        <!-- Label for Title -->
+        <label for="title" class="croissant-one-regular"> Title </label
+        ><br /><br />
+        <!-- Input for Title -->
+        <input
+          type="text"
+          class="form-control croissant-one-regular"
+          placeholder="Title"
+          id="title"
+          name="title"
+          required
+        /><br /><br />
+
+        <!-- Label for Date -->
+        <label for="date" class="croissant-one-regular"> Date </label
+        ><br /><br />
+        <!-- Input for Date -->
+        <input
+          type="date"
+          class="form-control croissant-one-regular"
+          placeholder="Date"
+          id="date"
+          name="date"
+          required
+        /><br /><br />
+
+        <!-- Input for Description -->
+        <label for="desc" class="croissant-one-regular"> Description </label
+        ><br /><br />
+        <!-- Label for Description -->
+        <textarea
+          class="form-control new-post croissant-one-regular"
+          id="desc"
+          aria-label="textarea"
+          placeholder="Write Something..."
+          id="desc"
+          name="desc"
+        ></textarea
+        ><br /><br />
+
+        <!-- Label for Notes -->
+        <label for="notes" class="croissant-one-regular"> Notes </label
+        ><br /><br />
+        <!-- Input for Notes -->
+        <textarea
+          class="form-control new-post croissant-one-regular"
+          id="notes"
+          aria-label="textarea"
+          placeholder="Write Something..."
+          id="notes"
+          name="notes"
+        ></textarea
+        ><br /><br />
+
+        <!-- Label for Rating -->
+        <label for="rating" class="croissant-one-regular"> Rating </label
+        ><br /><br />
+
+        <!-- Input for Rating -->
+        <select name="rating" id="rating" required>
+          <option value="" disabled selected>---Select---</option>
+          <option value="10">10</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option></select
+        ><br /><br /><br />
+
+        <!-- Button for adding -->
+        <button type="submit" class="btn btn-success croissant-one-regular">
+          Add</button
+        ><br /><br />
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
