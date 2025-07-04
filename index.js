@@ -1,21 +1,31 @@
 import express from "express";
 import bodyParser from "body-parser";
-import axios from "axios";
 import pg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "notes",
-  password: "3016",
-  port: 5432,
-});
+const db =
+  process.env.DATABASE_URL == null
+    ? new pg.Client({
+        user: "postgres",
+        host: "localhost",
+        database: "notes",
+        password: "3016",
+        port: 5432,
+      })
+    : new pg.Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      });
 
 db.connect();
 
@@ -84,6 +94,6 @@ app.post("/remove", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
